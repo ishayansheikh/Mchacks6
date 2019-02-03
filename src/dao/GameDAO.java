@@ -2,6 +2,10 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Collection;
+import java.util.Vector;
+import java.util.logging.Level;
 
 import util.DAOUtil;
 import entity.Hint;
@@ -57,7 +61,7 @@ public class GameDAO extends DAOUtil {
 	public void deleteHint( Hint  hint) {
 		Connection connection = null;     
 	    PreparedStatement statement = null;
-	    String sql =	"DELETE hint WHERE hintid = ?";
+	    String sql =	"DELETE FROM hint WHERE hintid = ?";
 	    try {
 			connection = super.getConnection();       	    	
 	        statement = connection.prepareStatement(sql);
@@ -81,7 +85,46 @@ public class GameDAO extends DAOUtil {
 	    	}
 	    }
 	}		
-	
-	
+
+
+	/**
+	 * Return collection of hint
+	 * @return
+	 */
+	public Collection<Hint> listAllHint() {
+		Vector<Hint> vHint = new Vector<Hint>();
+		String sql = "SELECT * from hint";	
+  		Connection connection = null;
+		PreparedStatement statement = null;
+		try     {       
+			connection = super.getConnection();       
+			statement = connection.prepareStatement(sql);
+			ResultSet resultSet = statement.executeQuery();   
+            while (resultSet.next()) {
+            	Hint hint = new Hint();
+            	hint.setHintId(resultSet.getInt(1));
+            	hint.setXcoordinat(resultSet.getInt(2));
+            	hint.setYcoordinat(resultSet.getInt(3));
+            	hint.setDistance(resultSet.getDouble(4));
+            	hint.setImageUrl(resultSet.getString(5));
+            	vHint.add(hint);    // store hint to vector
+            }
+		} catch (Exception e) {   
+			e.printStackTrace();
+		} finally {   
+			try {
+				statement.close();   
+			} catch (Exception e) {   
+				e.printStackTrace();   
+			}
+			
+			try {   
+				connection.close();   
+			} catch (Exception e) {   
+				e.printStackTrace();   
+			}   
+		}    
+		return vHint;
+	}
 
 }

@@ -7,21 +7,15 @@ package entity;
  *
  */
 public class Hint {
-	
-	
-
-
-
-	private int hintId;
+	public Hint() {
+	}
 	public Hint(int xcoordinat, int ycoordinat, double distance, String imageUrl) {
-		super();
 		this.xcoordinat = xcoordinat;
 		this.ycoordinat = ycoordinat;
 		this.distance = distance;
 		this.imageUrl = imageUrl;
 	}
 	public Hint(int hintId, int xcoordinat, int ycoordinat, double distance, String imageUrl) {
-		super();
 		this.hintId = hintId;
 		this.xcoordinat = xcoordinat;
 		this.ycoordinat = ycoordinat;
@@ -63,6 +57,7 @@ public class Hint {
 		return "Hint [hintId=" + hintId + ", xcoordinat=" + xcoordinat + ", ycoordinat=" + ycoordinat + ", distance="
 				+ distance + ", imageUrl=" + imageUrl + "]";
 	}
+	private int hintId;
 	private int xcoordinat;
 	private int ycoordinat;
 	private double distance;
