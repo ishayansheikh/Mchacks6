@@ -19,14 +19,13 @@ import javafx.stage.Stage;
  */
 public class McHacks6 extends Application {
 
-    final static Point2D Sniper = new Point2D(674, 400);
+    static Point2D Sniper = new Point2D(674, 400);
     static CrossHair crossHair = new CrossHair();
-
-    ;
+    static Pane root;
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Snipe the Sniper");
-        Pane root = new Pane();
+        root = new Pane();
         int maxWidth = 1024;
         Scene scene = new Scene(root, maxWidth, 720);
         scene.getStylesheets().add("css/mchacks6.css");
@@ -44,7 +43,7 @@ public class McHacks6 extends Application {
                 .endLeaderLineLeft()
                 .mainTitle("Your Colleague Shot")
                 .subTitle("Distance from snipper : 2000m")
-                .pause(50000)
+                .pause(60000)
                 .build();
 
         Callout callout2 = CalloutBuilder.create()
@@ -53,7 +52,7 @@ public class McHacks6 extends Application {
                 .endLeaderLineRight()
                 .mainTitle("Your Colleague Shot")
                 .subTitle("Distance from snipper : 3000m")
-                .pause(50000)
+                .pause(60000)
                 .build();
 
         Callout callout3 = CalloutBuilder.create()
@@ -62,7 +61,7 @@ public class McHacks6 extends Application {
                 .endLeaderLineLeft()
                 .mainTitle("Your Colleague Shot")
                 .subTitle("Distance from snipper : 10000m")
-                .pause(50000)
+                .pause(60000)
                 .build();
 
         Callout callout4 = CalloutBuilder.create()
@@ -71,12 +70,12 @@ public class McHacks6 extends Application {
                 .endLeaderLineRight()
                 .mainTitle("Your Colleague Stabbed")
                 .subTitle("Distance from snipper : 20m")
-                .pause(50000)
+                .pause(60000)
                 .build();
 
         root.getChildren().add(imageView);
-        ToolPane instructionsPane = new ToolPane();
-        root.getChildren().add(instructionsPane);
+        ToolPane toolPane = new ToolPane();
+        root.getChildren().add(toolPane);
 
         root.getChildren().addAll(callout1, callout2, callout3, callout4, crossHair);
 
@@ -99,14 +98,8 @@ public class McHacks6 extends Application {
                     callout1.play();
             }
         };
-
         root.addEventHandler(KeyEvent.KEY_TYPED, calloutKeyHandler);
         root.requestFocus();
-        // Observe mouse clicked coordinates
-        root.setOnMouseClicked(mouseevent -> {
-            System.out.println(mouseevent);
-        });
-
         primaryStage.show();
 
     }
