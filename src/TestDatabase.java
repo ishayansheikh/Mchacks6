@@ -32,8 +32,8 @@ public class TestDatabase {
 		Hint hint = new Hint(600, 700, 1000, "images/xyz.jpg");
 		test.insertHint(hint);
 		test.listAllHint();
-		hint.setHintId(6);
-		test.deleteHint(hint);
+//		hint.setHintId(6);
+//		test.deleteHint(hint);
 	}
 
 }
