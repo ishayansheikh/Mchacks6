@@ -54,7 +54,7 @@ public class CustomCallout extends Callout{
         // Main title text
         Text mainTitleText = new Text(getMainTitleText());
         HBox.setMargin(mainTitleText, new Insets(8, 8, 8, 8));
-        mainTitleText.setFont(Font.font(20));
+        mainTitleText.setFont(Font.font(14));
         mainTitle.getChildren().add(mainTitleText);
 
         // Position sub tile rectangle under main title

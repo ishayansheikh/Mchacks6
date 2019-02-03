@@ -33,6 +33,13 @@ css for mchack6 hackathon
     -fx-border-color:#e90311;
 }
 
+.txtNotification{
+    -fx-fill:black;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-font-size: 16;
+}
+
 
 
 
