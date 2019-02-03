@@ -1,0 +1,13 @@
+/*
+css for mchack6 hackathon
+*/
+
+.crossHair{
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-border-radius: 20;
+    -fx-background-radius: 0;
+    -fx-background-color: transparent;
+    -fx-font-size: 1em; /* 12 */ 
+}
+

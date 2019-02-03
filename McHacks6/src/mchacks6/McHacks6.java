@@ -22,10 +22,9 @@ public class McHacks6 extends Application {
         primaryStage.setTitle("Callouts");
         Pane root = new Pane();
         int maxWidth = 1024;
-
-        primaryStage.setScene(new Scene(root, maxWidth, 720));
-
-
+        Scene scene = new Scene(root, maxWidth, 720);
+        scene.getStylesheets().add("css/mchacks6.css");
+        primaryStage.setScene(scene);
         Image image = new Image("images/mountain.jpg", true);
         ImageView imageView = new ImageView(image);
         imageView.setPreserveRatio(true);
@@ -77,8 +76,9 @@ public class McHacks6 extends Application {
                 "-fx-font-size: 20;" +
                 "-fx-label-padding: 5;");
         root.getChildren().add(instructions);
-        root.getChildren().addAll(callout1, callout2, callout3, callout4);
-
+        CrossHair crossHair = new CrossHair();
+        root.getChildren().addAll(callout1, callout2, callout3, callout4, crossHair);
+        
         // Animate 1-4 callouts to point out things in the picture
         EventHandler<KeyEvent> calloutKeyHandler = keyEvent -> {
             switch (keyEvent.getCharacter()) {
@@ -101,15 +101,13 @@ public class McHacks6 extends Application {
 
         root.addEventHandler(KeyEvent.KEY_TYPED, calloutKeyHandler);
         root.requestFocus();
-
         // Observe mouse clicked coordinates
         root.setOnMouseClicked(mouseevent -> {
             System.out.println(mouseevent);
         });
 
         primaryStage.show();
-        
-        
+               
     }
 
     
