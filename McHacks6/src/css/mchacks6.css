@@ -8,6 +8,31 @@ css for mchack6 hackathon
     -fx-border-radius: 20;
     -fx-background-radius: 0;
     -fx-background-color: transparent;
-    -fx-font-size: 1em; /* 12 */ 
 }
+
+.toolPane{
+    -fx-background: rgba(30,30,30);
+    -fx-background-color: #ebe297;
+    -fx-border-radius: 10 10 10 10;
+    -fx-background-radius: 10 10 10 10;
+
+}
+
+.toolPaneText{
+    -fx-fill:black;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+}
+
+#btFire
+{
+    -fx-background-color:transparent;
+    -fx-border-radius:15;
+    -fx-border-width: 3;
+    -fx-border-color:#e90311;
+}
+
+
+
 

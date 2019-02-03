@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
@@ -67,15 +68,8 @@ public class McHacks6 extends Application {
                 .build();
 
         root.getChildren().add(imageView);
-        Label instructions = new Label("Please Kill the snipper");
-        
-        instructions.setStyle("-fx-text-fill: white; " +
-                "-fx-background-color: linear-gradient(#f4ce42, #f4a941); " +
-                "-fx-effect: dropshadow(three-pass-box , rgba(0,0,0,0.6), 5, 0.0 , 0 , 1 );" +
-                "-fx-border-insets: 10;" +
-                "-fx-font-size: 20;" +
-                "-fx-label-padding: 5;");
-        root.getChildren().add(instructions);
+        ToolPane instructionsPane = new ToolPane();
+        root.getChildren().add(instructionsPane);
         CrossHair crossHair = new CrossHair();
         root.getChildren().addAll(callout1, callout2, callout3, callout4, crossHair);
         

@@ -123,7 +123,7 @@ public class Callout extends Group {
                 getHeadPoint().getY());
 
         firstLeaderLine.setStroke(Color.WHITE);
-        firstLeaderLine.setStrokeWidth(3);
+        firstLeaderLine.setStrokeWidth(1.5);
 
         // Second part of the leader line
         Line secondLeaderLine = new Line(getLeaderLineToPoint().getX(),
@@ -132,25 +132,25 @@ public class Callout extends Group {
                 getLeaderLineToPoint().getY());
 
         secondLeaderLine.setStroke(Color.WHITE);
-        secondLeaderLine.setStrokeWidth(3);
+        secondLeaderLine.setStrokeWidth(1.5);
 
         // Main title Rectangle
         HBox mainTitle = new HBox();
         mainTitle.setBackground(
                 new Background(
                         new BackgroundFill(Color.WHITE,
-                                new CornerRadii(2),
+                                new CornerRadii(1),
                                 new Insets(0)))
         );
 
         // Main title text
         Text mainTitleText = new Text(getMainTitleText());
         HBox.setMargin(mainTitleText, new Insets(8, 8, 8, 8));
-        mainTitleText.setFont(Font.font(20));
+        mainTitleText.setFont(Font.font(14));
         mainTitle.getChildren().add(mainTitleText);
 
         // Position sub tile rectangle under main title
-        Rectangle subTitleRect = new Rectangle(2, 20);
+        Rectangle subTitleRect = new Rectangle(2, 18);
         subTitleRect.setFill(Color.WHITE);
 
         // Create the sub title
